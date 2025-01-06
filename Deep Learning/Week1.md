@@ -126,3 +126,54 @@ Neural networks have generated significant hype due to their remarkable performa
     - Neural networks have significantly improved performance in understanding unstructured data.
     - Often attract media attention due to their intuitive appeal (e.g., recognizing cats in images).
 
+--- 
+
+# The Rise of Deep Learning
+
+**1. Introduction to the Rise of Deep Learning**
+- **Question**: Why has deep learning taken off despite the ideas being decades old?
+- **Key Insight**: Understanding the drivers behind the rise of deep learning helps identify opportunities for application in organizations.
+
+**2. The Role of Data and Performance**
+- **Data Availability**:
+  - Historically, limited data restricted algorithm performance.
+  - The digitization of society has massively increased available data through:
+    - Digital activities (websites, mobile apps).
+    - Sensors (cameras, accelerometers, IoT devices).
+- **Performance and Data**:
+  - Traditional algorithms like SVM and logistic regression plateau in performance with increasing data.
+  - Neural networks improve performance as more data is provided, especially larger networks.
+
+**3. Key Drivers of Deep Learning Progress**
+- **Scale**:
+  - **Data Scale**: A large amount of labeled data (“m” = training set size) is essential.
+  - **Model Scale**: Larger neural networks with more parameters and connections drive better performance.
+- **Algorithmic Innovations**:
+  - Transition from sigmoid to ReLU activation functions improved gradient descent efficiency.
+  - Faster algorithms have enabled quicker training and experimentation.
+- **Computation**:
+  - Specialized hardware like GPUs and fast networking has accelerated training.
+  - Faster computation enables iterative experimentation and innovation.
+
+**4. Challenges and Considerations**
+- **Small Data Regimes**:
+  - With limited data, traditional algorithms can outperform neural networks due to manual feature engineering.
+  - Neural networks dominate in large data regimes.
+- **Limits of Scale**:
+  - Eventually, data or computational resources may become constraints.
+
+**5. Experimental Cycle in Neural Network Development**
+- **Workflow**:
+  - Idea ➔ Code Implementation ➔ Experimentation ➔ Analysis ➔ Refinement.
+- **Impact of Computation Speed**:
+  - Faster training reduces iteration time, enhancing productivity and innovation.
+
+**6. Future Prospects for Deep Learning**
+- **Continuous Improvement**:
+  - Data: Increasing digital data generation.
+  - Computation: Advancements in hardware and networking.
+  - Algorithms: Ongoing innovations from the research community.
+- **Optimism**: These drivers ensure deep learning will continue to improve for years to come.
+
+
+
