@@ -81,3 +81,67 @@ Where:
 
 ---
 
+# Logistic Regression
+
+Logistic regression is a supervised learning algorithm used for **binary classification problems**, where the output labels `Y` are either **0** or **1**. The goal is to predict the probability that a given input belongs to one of the two classes.
+
+For example, given an input feature vector `X` (such as an image), the algorithm outputs a prediction `Y_hat`, which is an estimate of the probability that the image is a cat picture.
+
+### Formal Definition:
+```
+Y_hat = P(Y = 1 | X)
+```
+This means that `Y_hat` represents the probability that `Y` is equal to 1, given the input features `X`.
+
+---
+
+## Parameters of Logistic Regression
+- **Input Features (`X`)**: An `n`-dimensional vector.
+- **Parameters (`W`)**: An `n`-dimensional vector.
+- **Bias (`b`)**: A real number.
+
+The prediction is generated using the parameters `W` and `b` as follows:
+```
+Z = W^T * X + b
+```
+However, a linear function like `Z = W^T * X + b` is not suitable for binary classification because the output can exceed the range of `[0, 1]`, which is not valid for probabilities.
+
+---
+
+## Sigmoid Function
+To address this, we apply the **sigmoid function** to `Z` to constrain the output between **0** and **1**.
+
+### Definition:
+```
+sigmoid(Z) = 1 / (1 + exp(-Z))
+```
+
+### Properties of the Sigmoid Function:
+- When `Z` is very large, `sigmoid(Z)` approaches **1**.
+- When `Z` is very small (large negative), `sigmoid(Z)` approaches **0**.
+
+### Plot of Sigmoid Function:
+| Z Value        | Sigmoid Output (`sigmoid(Z)`) |
+|----------------|--------------------------------|
+| Large Positive | ~1                              |
+| 0              | 0.5                             |
+| Large Negative | ~0                              |
+
+The sigmoid function ensures that the output is always within the range `[0, 1]`, making it suitable for probability estimation.
+
+---
+
+## Notation Differences
+In some courses, you might see an alternative notation where an additional feature `X_0 = 1` is added to the feature vector. In this case:
+```
+Y_hat = sigmoid(theta^T * X)
+```
+Where:
+- `theta_0` represents the bias term `b`.
+- `theta_1` to `theta_n` represent the parameters `W`.
+
+However, for simplicity, we keep **`W`** and **`b`** as separate parameters in this course.
+
+---
+
+
