@@ -113,7 +113,7 @@ To address this, we apply the **sigmoid function** to `Z` to constrain the outpu
 
 ### Definition:
 ```
-sigmoid(Z) = 1 / (1 + exp(-Z))
+sigmoid(Z) = 1 / (1 + e^(-Z))
 ```
 
 ### Properties of the Sigmoid Function:
