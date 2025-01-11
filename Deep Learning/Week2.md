@@ -86,5 +86,59 @@ $$
 
 ---
 
-## Resources
-- A notation guide is available on the course website for quick reference.
+# Logistic Regression
+
+## Overview
+- **Logistic Regression** is used for **binary classification problems** where output labels $Y$ are either 0 or 1.
+- Given input features $X$ (e.g., an image), the goal is to predict $\hat{Y}$, the probability that $Y=1$, i.e., $P(Y=1|X)$.
+
+## Parameters
+- **$W$**: Weight vector, dimension = same as $X$.
+- **$b$**: Bias term, a real number.
+- Together, these parameters define the logistic regression model.
+
+## Model Definition
+1. **Linear function**: Compute $Z = W^T X + b$
+   - Not suitable for probabilities directly because $Z$ can take values outside $[0, 1]$.
+2. **Sigmoid function**: Transform $Z$ to ensure $\hat{Y} \in [0, 1]$:
+
+$$
+\hat{Y} = \sigma(Z) = \frac{1}{1 + e^{-Z}}
+$$
+   
+   - $\sigma(Z)$ (sigmoid) squashes the output to the range $[0, 1]$.
+
+## Properties of the Sigmoid Function
+- Formula: $\sigma(Z) = \frac{1}{1 + e^{-Z}}$
+- Behavior:
+  - **$Z \to \infty$**: $\sigma(Z) \to 1$
+  - **$Z \to -\infty$**: $\sigma(Z) \to 0$
+  - $\sigma(0) = 0.5$ (crosses the y-axis at 0.5)
+- Plot:
+  - Horizontal axis: $Z$
+  - Vertical axis: $\sigma(Z)$
+  - Smooth curve transitioning from 0 to 1.
+
+## Notation and Conventions
+- **Standard Approach**:
+  - Keep $W$ and $b$ as separate parameters.
+- **Alternative Notation**:
+  - Define an extra feature $x_0 = 1$, making $X \in \mathbb{R}^{n+1}$.
+  - Combine $W$ and $b$ into a single parameter vector $\theta$, where:
+
+$$
+\hat{Y} = \sigma(\theta^T X)
+$$
+    
+  - This approach is not used in this course.
+
+## Key Takeaways
+- Logistic regression outputs $\hat{Y}$, the probability that $Y=1$.
+- Sigmoid ensures the output $\hat{Y}$ is a valid probability.
+- Parameters $W$ and $b$ are learned to make $\hat{Y}$ a good estimate of $P(Y=1|X)$.
+
+---
+
+## Next Steps
+- To optimize $W$ and $b$, a **cost function** will be defined in the next lecture.
+
