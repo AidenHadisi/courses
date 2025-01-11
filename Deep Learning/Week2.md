@@ -90,7 +90,7 @@ $$
 
 ## Overview
 - **Logistic Regression** is used for **binary classification problems** where output labels $Y$ are either 0 or 1.
-- Given input features $X$ (e.g., an image), the goal is to predict $\hat{Y}$, the probability that $Y=1$, i.e., $P(Y=1|X)$.
+- Given input features $X$ (e.g., an image), the goal is to predict $\hat{Y}$, the probability that $Y=1$, i.e., $\hat{Y} = P(Y=1|X)$.
 
 ## Parameters
 - **$W$**: Weight vector, dimension = same as $X$.
@@ -107,7 +107,6 @@ $$
 $$
    
    - $\sigma(Z)$ (sigmoid) squashes the output to the range $[0, 1]$.
-
 ## Properties of the Sigmoid Function
 - Formula: $\sigma(Z) = \frac{1}{1 + e^{-Z}}$
 - Behavior:
@@ -118,7 +117,6 @@ $$
   - Horizontal axis: $Z$
   - Vertical axis: $\sigma(Z)$
   - Smooth curve transitioning from 0 to 1.
-
 ## Notation and Conventions
 - **Standard Approach**:
   - Keep $W$ and $b$ as separate parameters.
@@ -129,7 +127,7 @@ $$
 $$
 \hat{Y} = \sigma(\theta^T X)
 $$
-    
+
   - This approach is not used in this course.
 
 ## Key Takeaways
@@ -139,6 +137,62 @@ $$
 
 ---
 
-## Next Steps
-- To optimize $W$ and $b$, a **cost function** will be defined in the next lecture.
+## Example: Computing $Z$ and $\hat{Y}$ in Logistic Regression
 
+#### Scenario
+You are building a logistic regression model to predict whether a given email is spam ($Y = 1$) or not spam ($Y = 0$). Suppose:
+- The feature vector $X = [0.5, 1.2]$ represents two features (e.g., word frequency and length of the email).
+- The weight vector $W = [2.0, -1.5]$ and bias term $b = 0.5$ are parameters of the model.
+
+---
+
+### Step 1: Compute $Z = W^T X + b$
+
+The linear combination of $X$ with weights $W$ is calculated as:
+
+$$
+Z = W^T X + b
+$$
+
+#### Calculation:
+$$
+Z = (2.0 \times 0.5) + (-1.5 \times 1.2) + 0.5
+$$
+$$
+Z = 1.0 - 1.8 + 0.5
+$$
+$$
+Z = -0.3
+$$
+
+---
+### Step 2: Apply the Sigmoid Function to Compute $\hat{Y}$
+
+Use the formula for the sigmoid function:
+
+$$
+\hat{Y} = \sigma(Z) = \frac{1}{1 + e^{-Z}}
+$$
+
+#### Calculation:
+Substitute $Z = -0.3$ into the sigmoid function:
+
+$$
+\hat{Y} = \frac{1}{1 + e^{0.3}}
+$$
+
+First, compute $e^{0.3} \approx 1.3499$:
+
+$$
+\hat{Y} = \frac{1}{1 + 1.3499}
+$$
+
+$$
+\hat{Y} = \frac{1}{2.3499} \approx 0.425
+$$
+
+---
+### Interpretation
+- **$Z = -0.3$**: The raw output of the linear function.
+- **$\hat{Y} \approx 0.425$**: The predicted probability that the email is spam is **42.5%**.
+---
