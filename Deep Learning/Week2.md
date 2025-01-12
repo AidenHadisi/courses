@@ -262,7 +262,7 @@ $$L(\hat{y}, y) = \frac{1}{2} (\hat{y} - y)^2$$
 ## Recap of Logistic Regression
 - **Model**: Logistic regression uses parameters $w$ and $b$ to predict outputs.
 - **Loss Function**: Measures performance on a single training example.
-- **Cost Function** ($J(w, b)$): Measures overall performance across the training set.
+- **Cost Function** $J(w, b)$: Measures overall performance across the training set.
 
 ### Cost Function Formula
 
