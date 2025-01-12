@@ -342,7 +342,7 @@ Let's break down how the derivatives are calculated step by step.
 
 ## **Example Of Gradient Descent**
 
-The cost function we are working with is:
+Suppose the cost function we are working with is:
 
 $$J(w, b) = (w \cdot x + b - y)^2$$
 
