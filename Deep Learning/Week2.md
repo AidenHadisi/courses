@@ -336,6 +336,141 @@ $$b := b - \alpha \frac{\partial J(w, b)}{\partial b}$$
 3. Partial derivatives guide the direction of the steepest descent.
 4. Intuitive understanding of calculus is sufficient to implement and use gradient descent effectively.
 
+Let's break down how the derivatives are calculated step by step.
+
+---
+
+### **Cost Function**
+
+The cost function we are working with is:
+
+$$J(w, b) = (w \cdot x + b - y)^2$$
+
+Here:
+
+- $w$ is the weight (parameter to optimize).
+- $b$ is the bias (another parameter to optimize).
+- $x$ is the input feature.
+- $y$ is the target/output value.
+
+The goal is to compute:
+
+1. $\frac{\partial J(w, b)}{\partial w}$
+2. $\frac{\partial J(w, b)}{\partial b}$
+
+---
+
+### **Step 1: Derivative with Respect to $w$**
+
+We start by applying the chain rule to differentiate J(w,b)J(w, b) with respect to ww.
+
+$$J(w, b) = (w \cdot x + b - y)^2$$
+
+Let’s denote $z = w \cdot x + b - y$ So:
+
+$$J(w, b) = z^2$$
+
+#### 1. Differentiate the outer function $z^2$ with respect to $z$:
+
+$$\frac{d(z^2)}{dz} = 2z$$
+
+#### 2. Differentiate the inner function $z = w \cdot x + b - y$ with respect to $w$:
+
+$$\frac{\partial z}{\partial w} = \frac{\partial (w \cdot x + b - y)}{\partial w} = x$$
+
+#### 3. Combine using the chain rule:
+
+$$\frac{\partial J(w, b)}{\partial w} = \frac{d J}{dz} \cdot \frac{\partial z}{\partial w}$$
+
+Substitute:
+
+$$\frac{\partial J(w, b)}{\partial w} = 2z \cdot x$$
+
+Substitute $z = w \cdot x + b - y$:
+
+$$
+\frac{\partial J(w, b)}{\partial w} = 2 \cdot (w \cdot x + b - y) \cdot x
+$$
+
+---
+
+### **Step 2: Derivative with Respect to $b$**
+
+We repeat the same process for bb.
+
+$$J(w, b) = (w \cdot x + b - y)^2$$
+
+Let $z = w \cdot x + b - y$. So:
+
+$$J(w, b) = z^2$$
+
+#### 1. Differentiate the outer function $z^2$ with respect to $z$:
+
+$$\frac{d(z^2)}{dz} = 2z$$
+
+#### 2. Differentiate the inner function $z = w \cdot x + b - y$ with respect to bb:
+
+$$\frac{\partial z}{\partial b} = \frac{\partial (w \cdot x + b - y)}{\partial b} = 1$$
+
+#### 3. Combine using the chain rule:
+
+$$\frac{\partial J(w, b)}{\partial b} = \frac{d J}{dz} \cdot \frac{\partial z}{\partial b}$$
+
+Substitute:
+
+$$\frac{\partial J(w, b)}{\partial b} = 2z \cdot 1$$
+
+Substitute $z = w \cdot x + b - y$:
+
+$$\frac{\partial J(w, b)}{\partial b} = 2 \cdot (w \cdot x + b - y)$$
+
+
+---
+
+### **Example Calculation**
+
+Let’s calculate the derivatives for:
+
+- $x = 2$
+- $y = 5$
+- Initial values: $w=0$, $b = 0$
+
+#### 1. Compute $z$:
+
+$$z = w \cdot x + b - y = 0 \cdot 2 + 0 - 5 = -5$$
+
+#### 2. Derivative with respect to $w$:
+
+$$\frac{\partial J}{\partial w} = 2 \cdot z \cdot x = 2 \cdot (-5) \cdot 2 = -20$$
+
+#### 3. Derivative with respect to bb:
+
+$$\frac{\partial J}{\partial b} = 2 \cdot z = 2 \cdot (-5) = -10$$
+
+---
+
+### **Next Steps: Update Parameters**
+
+Use gradient descent to update $w$ and $b$:
+
+1. Update $w$:
+
+$$w := w - \alpha \cdot \frac{\partial J}{\partial w}$$
+
+Substitute:
+
+$$w := 0 - 0.1 \cdot (-20) = 0 + 2 = 2$$
+
+2. Update $b$:
+
+$$b := b - \alpha \cdot \frac{\partial J}{\partial b}$$
+
+Substitute:
+
+$$b := 0 - 0.1 \cdot (-10) = 0 + 1 = 1$$
+
+Now, $w=2$ and $b = 1$. You can repeat the process until convergence.
+
 # Intuitive Understanding of Derivatives
 
 ## Overview
