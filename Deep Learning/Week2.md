@@ -340,7 +340,7 @@ Let's break down how the derivatives are calculated step by step.
 
 ---
 
-### **Cost Function**
+## **Example Of Gradient Descent**
 
 The cost function we are working with is:
 
