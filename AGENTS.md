@@ -38,11 +38,12 @@ If the source skips a definition I'd need, or states something wrong, add or fix
 
 Every note:
 
-1. Starts with a `#` title, then a 1–3 sentence summary callout:
+1. Starts with a `#` title, then a 1–3 sentence summary (plain text, no callout):
 
    ```markdown
-   > [!abstract]
-   > Gradient descent minimizes a cost function by repeatedly stepping opposite the gradient.
+   # Title
+
+   Gradient descent minimizes a cost function by repeatedly stepping opposite the gradient.
    ```
 
 2. Uses `##` / `###` headings named after the concepts in *this* lesson — not a fixed list. Keep it to two levels when you can.
@@ -60,7 +61,6 @@ Beyond that, shape each note to fit its content. A math lecture, a system-design
 | Math | LaTeX |
 | Code worth reading or running | Fenced code block with a language |
 | A flow or relationship easier seen than read | Mermaid diagram |
-| A definition, warning, or insight worth interrupting for | Callout — sparingly |
 
 **Bold** a key term where it's introduced, nothing else. `Inline code` for identifiers and commands.
 
@@ -85,14 +85,7 @@ Good:
 
 ## Obsidian syntax
 
-- Callouts: type on the first line, every body line prefixed with `> `. One callout per block.
-
-  ```markdown
-  > [!warning] Feature scaling
-  > Unscaled features make the cost contours elongated, so gradient descent zig-zags.
-  ```
-
-  Types I use: `abstract`, `note`, `tip`, `warning`, `example`.
+- **No callouts**: Do not use Obsidian callouts (`> [!warning]`, `> [!note]`, `> [!abstract]`, etc.). Format warnings, insights, or takeaways as direct bold bullets or concise sentences.
 - Math: `$x^2$` inline, `$$...$$` for display. No spaces just inside the `$`. Never `\(...\)`.
 - Link to an existing note with `[[Note Name]]` only when it genuinely helps.
 

@@ -16,7 +16,7 @@ Rewrite the file in place so it follows `AGENTS.md`:
 - Cut filler and transcript voice.
 - Merge sections that cover the same idea; reorder so prerequisites come first.
 - Swap formats where a better one fits (prose → bullets, parallel bullets → table).
-- Fix Obsidian syntax: proper `> [!type]` callouts, `$...$` math.
+- Fix Obsidian syntax: no callouts (`> [!type]`), use `$...$` for math.
 - Fix factual errors, marked *(added)*.
 
 Do not expand. No new examples, no new sections, no extra background. The result should be shorter than the input and lose no idea worth recalling.
